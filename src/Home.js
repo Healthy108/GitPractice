@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home() {
-  return <div>Home66666</div>;
+  return <div>Home88888</div>;
 }
 
 export default Home;
