@@ -1,0 +1,66 @@
+
+.register-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #00000050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.register_form{
+    background-color: #7d7d7d;
+    padding: 5px 20px 20px;
+}
+
+.register_logo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.register_logo_img{
+    width: 150px;
+}
+
+.register_form_layout{
+    background-color: #595959;
+    padding: 20px;
+}
+
+.register_icons {
+    position: absolute;
+    z-index: 10;
+    top: 11px;
+    left: 15px;
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+.register_group_input .register-input, .register_group_input .register-option{
+    padding: 10px 10px 10px 50px;
+    font-size: 15px;
+    min-width: 400px;
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.register_group_input .register-option{
+    margin-bottom: 20px;
+}
+
+.register-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-btn {
+    border-radius: 0;
+    min-width: 180px;
+    font-size: 18px;
+}
