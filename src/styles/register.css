@@ -15,6 +15,7 @@
 .register_form{
     background-color: #7d7d7d;
     padding: 5px 20px 20px;
+    position: relative;
 }
 
 .register_logo{
@@ -63,4 +64,24 @@
     border-radius: 0;
     min-width: 180px;
     font-size: 18px;
+}
+
+.btn-hideRegister {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+}
+
+.btn-hideRegister:hover {
+    color: crimson;
+}
+
+/* show hide register */
+d-flex {
+    display: flex;
+}
+
+d-none {
+    display: none;
 }

@@ -11,18 +11,24 @@ import { FaUserAlt } from "react-icons/fa";
 import { FiKey } from "react-icons/fi";
 import { HiUserGroup } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
+import { FaWindowClose } from "react-icons/fa";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../styles/register.css";
 
-function Register() {
+
+
+function Register({showRegister, handleShowRegister}) {
 	return (
-		<div className="register-wrapper">
+		<div className={showRegister === true ? 'd-flex register-wrapper' : 'd-none register-wrapper'}>
 			<div className="register_form">
 				<div className="register_logo">
 					<Image className="register_logo_img" src={logoImg} alt="logo" />
 				</div>
+
+				<FaWindowClose title="Close" className="btn-hideRegister" onClick={handleShowRegister}/>
+
 				<div className="register_form_layout">
 					<div className="register-list-inputs">
 						<InputGroup className="mb-3 register_group_input">
@@ -77,10 +83,10 @@ function Register() {
 						</InputGroup>
 					</div>
 					<div className="register-buttons">
-						<Button className="register-btn" variant="secondary">
+						<Button className="register-btn" variant="secondary" title="Trở lại" onClick={handleShowRegister}>
 							Back
 						</Button>
-						<Button className="register-btn" variant="success" type="reset">
+						<Button className="register-btn" variant="success" type="reset" title="Đăng ký">
 							Register
 						</Button>
 					</div>

@@ -11,7 +11,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 const localizer = momentLocalizer(moment);
 
-function Home() {
+function Home({handleShowRegister}) {
+
   return (
     <div className="home_container">
       <div className="left_view">
@@ -50,7 +51,7 @@ function Home() {
 
           <div className="content_calender">
             <div>
-              <Button variant="success">Add Event</Button>
+              <Button variant="success" onClick={handleShowRegister}>Add Event</Button>
               <label>Events Manager</label>
               <hr />
             </div>
