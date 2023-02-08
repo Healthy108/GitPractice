@@ -1,0 +1,74 @@
+.home_container {
+    display: flex;
+}
+
+.home_container .left_view {
+    width: 280px;
+    text-align: center;
+}
+
+.home_container .left_view >h1 {
+    color: blue;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.home_container .left_view >h6 {
+    color: blue;
+    font-style: italic;
+    font-size: 12px;
+}
+
+
+.home_container .right_view {
+    width: 100%;
+}
+
+.home_container .account {
+    height: 35px;
+}
+
+.home_container .contents { 
+    background: rgba(249, 237, 237, 0.789);
+}
+
+.input_group {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_group input {
+    width: 300px;
+}
+
+.right_view .account {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.right_view .content_calender {
+    background: #fff;
+    height: 90vh;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.btncalendar_group {
+    display: flex;
+}
+
+.btncalendar_group .btn {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btncalendar_group .calendar {
+    width: 85%;
+}
+
