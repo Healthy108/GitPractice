@@ -41,9 +41,9 @@
 }
 
 .home_container .right_view .account {
-    padding-left: 86%;
     height: 38px;
-
+    display: flex;
+    justify-content: flex-end;
 }
 
 .home_container .contents { 
@@ -87,3 +87,13 @@
     width: 85%;
 }
 
+.event_layout{
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.events {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

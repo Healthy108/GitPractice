@@ -82,14 +82,16 @@ function Home({ handleShowRegister }) {
           </div>
 
           <div className="content_calender">
-            <div>
-              <Button variant="success" onClick={handleShowRegister}>
-                Add Event
-              </Button>
-              <label>Events Manager</label>
-              <RiArrowGoBackLine />
-              <hr />
+            <div className="event_layout">
+              <div className="events">
+                <Button variant="success" onClick={handleShowRegister}>
+                  Add Event
+                </Button>
+                <label>Events Manager</label>
+                <RiArrowGoBackLine />
+              </div>
             </div>
+            {/* <hr /> */}
             <div className="btncalendar_group">
               <div className="btn">
                 <Button variant="light">

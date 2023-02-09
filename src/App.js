@@ -15,11 +15,12 @@ function App() {
 
   return (
     <div className="App">
-
-      <Home handleShowRegister={handleShowRegister}/>
-      <Register handleShowRegister={handleShowRegister} showRegister={showRegister}/>
+      <Home handleShowRegister={handleShowRegister} />
+      <Register
+        handleShowRegister={handleShowRegister}
+        showRegister={showRegister}
+      />
       {/* <Login /> */}
-
     </div>
   );
 }
