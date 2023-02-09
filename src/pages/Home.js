@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import moment from "moment";
-import { FaRegHandPointRight, FaRegUserCircle } from "react-icons/fa";
+import { FaRegHandPointRight } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { AiOutlineArrowsAlt } from "react-icons/ai";
 import { HiUserGroup } from "react-icons/hi";
@@ -10,14 +10,59 @@ import { SlArrowRight } from "react-icons/sl";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import {
+  Calendar,
+  momentLocalizer,
+  dateFnsLocalizer,
+} from "react-big-calendar";
+import format from "date-fns/format";
+import parse from "date-fns/parse";
+import startOfWeek from "date-fns/startOfWeek";
+import getDay from "date-fns/getDay";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "../styles/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const localizer = momentLocalizer(moment);
+// const localizer = momentLocalizer(moment);
+
+const locales = {
+  "en-US": require("date-fns/locale/en-US"),
+};
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales,
+});
+
+const events = [
+  {
+    id: 0,
+    title: "training",
+    start: new Date(2023, 1, 9),
+    end: new Date(2023, 1, 13),
+    resourceId: 1,
+  },
+  {
+    id: 1,
+    title: "late lunch",
+    start: new Date(2021, 1, 15),
+    end: new Date(2021, 1, 18),
+    resourceId: 2,
+  },
+];
 
 function Home({ handleShowRegister }) {
+  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
+  const [allEvents, setAllEvents] = useState(events);
+
+  const handleAddEvent = () => {
+    setAllEvents([...allEvents, newEvent]);
+  };
+
   return (
     <div className="home_container">
       <div className="left_view">
@@ -25,7 +70,12 @@ function Home({ handleShowRegister }) {
         <h6>YOUR TRUSTED PARTNER</h6>
         <div>
           <div>
-            <FaRegUserCircle style={{ fontSize: 30 }} />
+            <img
+              src="http://pluspng.com/img-png/png-user-icon-icons-logos-emojis-users-2400.png"
+              alt=""
+              width={30}
+              height={30}
+            />
             Welcome
           </div>
           <div>Khanh Tuấn Nguyễn</div>
@@ -62,13 +112,43 @@ function Home({ handleShowRegister }) {
                 Event4
               </p>
             </div>
+            {/* Add New Event */}
+            <h2>Add Event</h2>
+            <div>
+              <input
+                placeholder="Add title"
+                value={newEvent.title}
+                onChange={(e) =>
+                  setNewEvent({ ...newEvent, title: e.target.value })
+                }
+              />
+              <ReactDatePicker
+                placeholderText="Start Date"
+                selected={newEvent.start}
+                onChange={(start) => setNewEvent({ ...newEvent, start })}
+              />
+              <ReactDatePicker
+                placeholderText="End Date"
+                selected={newEvent.end}
+                onChange={(end) => setNewEvent({ ...newEvent, end })}
+              />
+              <Button variant="success" onClick={handleAddEvent}>
+                Add Eventes
+              </Button>
+            </div>
           </div>
         </div>
       </div>
       <div className="right_view">
         <div className="account">
           <AiOutlineArrowsAlt style={{ fontSize: 30, paddingRight: 8 }} />
-          <FaRegUserCircle style={{ fontSize: 25 }} />
+          <img
+            src="http://pluspng.com/img-png/png-user-icon-icons-logos-emojis-users-2400.png"
+            alt=""
+            width={25}
+            height={25}
+            onClick={handleShowRegister}
+          />
           <div>Khanh Tuấn</div>
           <MdOutlineArrowDropDown />
         </div>
@@ -84,10 +164,8 @@ function Home({ handleShowRegister }) {
           <div className="content_calender">
             <div className="event_layout">
               <div className="events">
-                <Button variant="success" onClick={handleShowRegister}>
-                  Add Event
-                </Button>
-                <label>Events Manager</label>
+                <Button variant="success">Add Event</Button>
+                <h4>Events Manager</h4>
                 <RiArrowGoBackLine />
               </div>
             </div>
@@ -108,11 +186,18 @@ function Home({ handleShowRegister }) {
                 <Button variant="primary">Meeting room 6</Button>
               </div>
               <div className="calendar">
-                <Calendar
+                {/* <Calendar
                   localizer={localizer}
                   startAccessor="start"
                   endAccessor="end"
                   style={{ height: 500 }}
+                /> */}
+                <Calendar
+                  localizer={localizer}
+                  events={allEvents}
+                  startAccessor="start"
+                  endAccessor="end"
+                  style={{ height: 500, margin: "50px" }}
                 />
               </div>
             </div>
