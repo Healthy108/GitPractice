@@ -2,6 +2,7 @@ import "./styles/App.css";
 import { useState } from "react";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   const [showRegister, setShowRegister] = useState(false);
@@ -14,11 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <Home handleShowRegister={handleShowRegister} />
-      <Register
-        handleShowRegister={handleShowRegister}
-        showRegister={showRegister}
-      />
+
+      <Home handleShowRegister={handleShowRegister}/>
+      <Register handleShowRegister={handleShowRegister} showRegister={showRegister}/>
+      {/* <Login /> */}
+
     </div>
   );
 }

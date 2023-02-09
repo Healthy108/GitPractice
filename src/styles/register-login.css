@@ -36,23 +36,21 @@
 .register_icons {
     position: absolute;
     z-index: 10;
-    top: 11px;
     left: 15px;
     font-size: 20px;
     color: #7d7d7d;
 }
 
+div .register_group_input, div .register-option{
+    align-items: center;
+}
+
 .register_group_input .register-input, .register_group_input .register-option{
-    padding: 10px 10px 10px 50px;
+    padding: 10px 40px 10px 50px;
     font-size: 15px;
     min-width: 400px;
     border-radius: 0;
     border: 0;
-    margin-bottom: 10px;
-}
-
-.register_group_input .register-option{
-    margin-bottom: 20px;
 }
 
 .register-buttons{
@@ -74,14 +72,21 @@
 }
 
 .btn-hideRegister:hover {
-    color: crimson;
+    color: yellow;
 }
 
-/* show hide register */
-d-flex {
-    display: flex;
+/* Login */
+
+.btn-handlePassword {
+    color: #7d7d7d;
+    position: absolute;
+    right: 10px;
+    z-index: 5;
+    font-size: 18px;
 }
 
-d-none {
-    display: none;
+.forgot_password-btn {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 0;
 }
