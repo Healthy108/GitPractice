@@ -4,6 +4,12 @@ import moment from "moment";
 import { FaRegHandPointRight, FaRegUserCircle } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { AiOutlineArrowsAlt } from "react-icons/ai";
+import { HiUserGroup } from "react-icons/hi";
+import { FaUserAlt } from "react-icons/fa";
+import { SlArrowRight } from "react-icons/sl";
+import { RiArrowGoBackLine } from "react-icons/ri";
+import { MdOutlineArrowDropDown } from "react-icons/md";
+
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "../styles/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,55 +17,86 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 const localizer = momentLocalizer(moment);
 
-function Home({handleShowRegister}) {
-
+function Home({ handleShowRegister }) {
   return (
     <div className="home_container">
       <div className="left_view">
         <h1>GEM</h1>
         <h6>YOUR TRUSTED PARTNER</h6>
         <div>
-          <FaRegUserCircle />
-          <div>Welcome</div>
+          <div>
+            <FaRegUserCircle style={{ fontSize: 30 }} />
+            Welcome
+          </div>
           <div>Khanh Tuấn Nguyễn</div>
           <hr />
-          <FaHome />
-          <h2>Home</h2>
-        </div>
-        <label>New Events</label>
-        <div>
-          <p>Event1</p>
-          <p>Event2</p>
-          <p>Event3</p>
-          <p>Event4</p>
+          <div className="under">
+            <h6>
+              <FaHome />
+              Home
+            </h6>
+            <h6>
+              <HiUserGroup />
+              Rooms & Group
+            </h6>
+            <h6>
+              <FaUserAlt />
+              Users
+            </h6>
+            <label>New Events</label>
+            <div>
+              <p>
+                <SlArrowRight />
+                Event1
+              </p>
+              <p>
+                <SlArrowRight />
+                Event2
+              </p>
+              <p>
+                <SlArrowRight />
+                Event3
+              </p>
+              <p>
+                <SlArrowRight />
+                Event4
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="right_view">
         <div className="account">
-          <AiOutlineArrowsAlt />
-          <FaRegUserCircle />
+          <AiOutlineArrowsAlt style={{ fontSize: 30, paddingRight: 8 }} />
+          <FaRegUserCircle style={{ fontSize: 25 }} />
           <div>Khanh Tuấn</div>
+          <MdOutlineArrowDropDown />
         </div>
         <div className="contents">
           <div className="input_group">
-            <input />
-            <input />
+            <input placeholder="From: yy/mm/dd hh:mm" />
+            <input placeholder="To: yy/mm/dd hh:mm" />
             <Button variant="primary">Search empty rooms</Button>
-            <input />
+            <input placeholder="Search event..." />
             <Button variant="primary">Search</Button>
           </div>
 
           <div className="content_calender">
             <div>
-              <Button variant="success" onClick={handleShowRegister}>Add Event</Button>
+              <Button variant="success" onClick={handleShowRegister}>
+                Add Event
+              </Button>
               <label>Events Manager</label>
+              <RiArrowGoBackLine />
               <hr />
             </div>
             <div className="btncalendar_group">
               <div className="btn">
                 <Button variant="light">
-                  <FaRegHandPointRight />
-                  <label>ALL</label>
+                  <div>
+                    <FaRegHandPointRight />
+                    {""} ALL
+                  </div>
                 </Button>
                 <Button variant="warning">Meeting room 1</Button>
                 <Button variant="success">Meeting room 2</Button>

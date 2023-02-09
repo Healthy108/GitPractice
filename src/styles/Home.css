@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.home_container .left_view {
+.home_container .left_view{
     width: 280px;
     text-align: center;
 }
@@ -10,9 +10,9 @@
 .home_container .left_view >h1 {
     color: blue;
     font-style: italic;
-    font-size: 50px;
+    font-size: 68px;
     font-weight: 800;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: -5px;
 }
 
@@ -22,13 +22,28 @@
     font-size: 12px;
 }
 
+.home_container .left_view .under {
+    text-align: left;
+    margin-left: 20px;
+    padding: 1.5%;
+    line-height: 30px;
+}
+
+
+.home_container .left_view .under >h6 {
+    color: blue;
+    line-height: 40px;
+}
+
 
 .home_container .right_view {
     width: 100%;
 }
 
-.home_container .account {
-    height: 35px;
+.home_container .right_view .account {
+    padding-left: 86%;
+    height: 38px;
+
 }
 
 .home_container .contents { 
