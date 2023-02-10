@@ -1,0 +1,19 @@
+.wrapper_container {
+    display: flex;
+}
+
+.wrapper_container .right_view {
+    width: 100%;
+}
+
+.wrapper_container .right_view .account {
+    align-items: center;
+    height: 38px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper_container .right_view .contents { 
+    background: rgba(249, 237, 237, 0.789);
+}
+

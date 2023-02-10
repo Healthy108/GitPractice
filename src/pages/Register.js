@@ -13,130 +13,148 @@ import { HiUserGroup } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 import { ImEye } from "react-icons/im";
 
-import {useState} from 'react'
+import { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "../styles/register-login.css";
+import "../styles/register.css";
 
+function Register({ showRegister, handleShowRegister }) {
+  const [password, setPassword] = useState("password");
 
+  const handleShowPassword = () => {
+    password === "password" ? setPassword("text") : setPassword("password");
+  };
 
-function Register({showRegister, handleShowRegister}) {
-	const [password, setPassword] = useState("password");
+  return (
+    <div
+      className={
+        showRegister === true
+          ? "d-flex register-wrapper"
+          : "d-none register-wrapper"
+      }
+    >
+      <div className="register_form">
+        <div className="register_logo">
+          <Image className="register_logo_img" src={logoImg} alt="logo" />
+        </div>
 
-	const handleShowPassword = () => {
-		password === "password" ? setPassword("text") : setPassword("password");
-	};
+        <FaWindowClose
+          title="Close"
+          className="btn-hideRegister"
+          onClick={handleShowRegister}
+        />
 
-	return (
-		<div className={showRegister === true ? 'd-flex register-wrapper' : 'd-none register-wrapper'}>
-			<div className="register_form">
-				<div className="register_logo">
-					<Image className="register_logo_img" src={logoImg} alt="logo" />
-				</div>
+        <div className="register_form_layout">
+          <div className="register-list-inputs">
+            <InputGroup className="mb-3 register_group_input">
+              <FaUserAlt className="register_icons" />
+              <Form.Control
+                className="register-input"
+                type="text"
+                placeholder="Full name..."
+                // aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
 
-				<FaWindowClose title="Close" className="btn-hideRegister" onClick={handleShowRegister}/>
+            <InputGroup className="mb-3 register_group_input">
+              <MdEmail className="register_icons" />
+              <Form.Control
+                className="register-input"
+                type="email"
+                placeholder="Email..."
+                // aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
 
-				<div className="register_form_layout">
-					<div className="register-list-inputs">
-						<InputGroup className="mb-3 register_group_input">
-							<FaUserAlt className="register_icons" />
-							<Form.Control
-								className="register-input"
-								type="text"
-								placeholder="Full name..."
-								// aria-label="Username"
-								aria-describedby="basic-addon1"
-							/>
-						</InputGroup>
+            <InputGroup className="mb-3 register_group_input">
+              <FiKey className="register_icons" />
+              <Form.Control
+                className="register-input"
+                type={password}
+                placeholder="Password..."
+                // aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <ImEye
+                className={
+                  password === "text"
+                    ? "btn-handlePassword d-block"
+                    : "btn-handlePassword d-none"
+                }
+                onClick={handleShowPassword}
+              />
+              <FaRegEyeSlash
+                className={
+                  password === "password"
+                    ? "btn-handlePassword d-block"
+                    : "btn-handlePassword d-none"
+                }
+                onClick={handleShowPassword}
+              />
+            </InputGroup>
 
-						<InputGroup className="mb-3 register_group_input">
-							<MdEmail className="register_icons" />
-							<Form.Control
-								className="register-input"
-								type="email"
-								placeholder="Email..."
-								// aria-label="Username"
-								aria-describedby="basic-addon1"
-							/>
-						</InputGroup>
+            <InputGroup className="mb-3 register_group_input">
+              <FiKey className="register_icons" />
+              <Form.Control
+                className="register-input"
+                type={password}
+                placeholder="Password..."
+                // aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <ImEye
+                className={
+                  password === "text"
+                    ? "btn-handlePassword d-block"
+                    : "btn-handlePassword d-none"
+                }
+                onClick={handleShowPassword}
+              />
+              <FaRegEyeSlash
+                className={
+                  password === "password"
+                    ? "btn-handlePassword d-block"
+                    : "btn-handlePassword d-none"
+                }
+                onClick={handleShowPassword}
+              />
+            </InputGroup>
 
-						<InputGroup className="mb-3 register_group_input">
-							<FiKey className="register_icons" />
-							<Form.Control
-								className="register-input"
-								type={password}
-								placeholder="Password..."
-								// aria-label="Username"
-								aria-describedby="basic-addon1"
-							/>
-							<ImEye
-								className={
-									password === "text"
-										? "btn-handlePassword d-block"
-										: "btn-handlePassword d-none"
-								}
-								onClick={handleShowPassword}
-							/>
-							<FaRegEyeSlash
-								className={
-									password === "password"
-										? "btn-handlePassword d-block"
-										: "btn-handlePassword d-none"
-								}
-								onClick={handleShowPassword}
-							/>
-						</InputGroup>
-
-						<InputGroup className="mb-3 register_group_input">
-							<FiKey className="register_icons" />
-							<Form.Control
-								className="register-input"
-								type={password}
-								placeholder="Password..."
-								// aria-label="Username"
-								aria-describedby="basic-addon1"
-							/>
-							<ImEye
-								className={
-									password === "text"
-										? "btn-handlePassword d-block"
-										: "btn-handlePassword d-none"
-								}
-								onClick={handleShowPassword}
-							/>
-							<FaRegEyeSlash
-								className={
-									password === "password"
-										? "btn-handlePassword d-block"
-										: "btn-handlePassword d-none"
-								}
-								onClick={handleShowPassword}
-							/>
-						</InputGroup>
-
-						<InputGroup className="mb-3 register_group_input">
-							<HiUserGroup className="register_icons" />
-							<Form.Select className="register-option">
-								<option>BGD</option>
-								<option>BA</option>
-								<option>Dev</option>
-								<option>Tester</option>
-							</Form.Select>
-						</InputGroup>
-					</div>
-					<div className="register-buttons">
-						<Button className="register-btn" variant="secondary" title="Trở lại" onClick={handleShowRegister}>
-							Back
-						</Button>
-						<Button className="register-btn" variant="success" type="reset" title="Đăng ký">
-							Register
-						</Button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+            <InputGroup className="mb-3 register_group_input">
+              <HiUserGroup className="register_icons" />
+              <Form.Select className="register-option">
+                <option>BGD</option>
+                <option>BA</option>
+                <option>Dev</option>
+                <option>Tester</option>
+              </Form.Select>
+            </InputGroup>
+          </div>
+          <div className="register-buttons">
+            <Button
+              className="register-btn"
+              variant="secondary"
+              title="Trở lại"
+              onClick={handleShowRegister}
+            >
+              Back
+            </Button>
+            <Button
+              className="register-btn"
+              variant="success"
+              type="reset"
+              title="Đăng ký"
+            >
+              Register
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Register;

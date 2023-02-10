@@ -75,18 +75,3 @@ div .register_group_input, div .register-option{
     color: yellow;
 }
 
-/* Login */
-
-.btn-handlePassword {
-    color: #7d7d7d;
-    position: absolute;
-    right: 10px;
-    z-index: 5;
-    font-size: 18px;
-}
-
-.forgot_password-btn {
-    margin-top: 20px;
-    width: 100%;
-    border-radius: 0;
-}
