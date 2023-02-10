@@ -1,0 +1,32 @@
+.menu_container {
+    width: 280px;
+    text-align: center;
+}
+
+.menu_container >h1 {
+    color: blue;
+    font-style: italic;
+    font-size: 68px;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.menu_container >h6 {
+    color: blue;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.menu_container .under {
+    text-align: left;
+    margin-left: 20px;
+    padding: 1.5%;
+    line-height: 30px;
+}
+
+
+.menu_container .under >h6 {
+    color: blue;
+    line-height: 40px;
+}
